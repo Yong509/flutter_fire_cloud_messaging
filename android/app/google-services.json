@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "351954591846",
+    "project_id": "notitest-86568",
+    "storage_bucket": "notitest-86568.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:351954591846:android:7210fdb94518ea38258da7",
+        "android_client_info": {
+          "package_name": "com.example.cloud_messaging_fire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "351954591846-e6dp5mjnntsnai275ehdk7dvukk2j9g1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG5bZqox3Mm4Z_Hqlc2JnZ2oWeQS9sUS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "351954591846-e6dp5mjnntsnai275ehdk7dvukk2j9g1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
