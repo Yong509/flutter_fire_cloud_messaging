@@ -9,11 +9,15 @@ class FirebaseServices {
 
   listenForegroundMessages() {
     FirebaseMessaging.onMessage.listen((message) {
-      log("Foreground message ");
+      log("Foreground message ${message.notification!.title} ${message.notification!.body}");
     });
   }
 
-  Future<void> listenBackgroundMessages(RemoteMessage message) async {
+  Future<void> _backgroundMessage(RemoteMessage message) async {
     log("background message");
+  }
+
+  listenBackgroundMessages() {
+    FirebaseMessaging.onBackgroundMessage(_backgroundMessage);
   }
 }

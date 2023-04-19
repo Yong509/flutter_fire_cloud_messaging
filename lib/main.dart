@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:cloud_messaging_fire/screens/my_app.dart';
+import 'package:cloud_messaging_fire/services/firebase_services.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  FirebaseMessaging.onBackgroundMessage(listenBackgroundMessages);
+  // FirebaseServices().listenBackgroundMessages();
 
   runApp(const MyApp());
 }
