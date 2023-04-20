@@ -1,6 +1,7 @@
 import 'dart:developer';
-
+import 'package:cloud_messaging_fire/services/notification.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class FirebaseServices {
   Future<String?> getToken() async {
@@ -9,7 +10,26 @@ class FirebaseServices {
 
   listenForegroundMessages() {
     FirebaseMessaging.onMessage.listen((message) {
-      log("Foreground message ${message.notification!.title} ${message.notification!.body}");
+      RemoteNotification? notification = message.notification;
+      if (notification != null) {
+        flutterLocalNotificationsPlugin.show(
+          notification.hashCode,
+          notification.title,
+          notification.body,
+          NotificationDetails(
+            android: AndroidNotificationDetails(
+              androidNotificationChannel.id,
+              androidNotificationChannel.name,
+              channelDescription: androidNotificationChannel.description,
+              importance: androidNotificationChannel.importance,
+              enableLights: androidNotificationChannel.enableLights,
+              enableVibration: androidNotificationChannel.enableVibration,
+            ),
+          ),
+        );
+      }
+
+      log("${message.notification!.title}");
     });
   }
 
